@@ -1,7 +1,13 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
+@import "./ingredient.scss";
 // place global css here
+
+body {
+  background-color: #FFF3D3;
+  color: #112a46
+}
 *,
 *::before,
 *::after {
