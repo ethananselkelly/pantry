@@ -5,7 +5,6 @@ import { hot } from "react-hot-loader/root";
 import getCurrentUser from "../services/getCurrentUser";
 import "../assets/scss/main.scss";
 
-import IngredientIndex from "./IngredientIndex"
 import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
@@ -32,7 +31,6 @@ const App = (props) => {
         <Route exact path="/">
           <h2>Welcome to your pantry</h2>
         </Route>
-        <Route exact path="/ingredients" component={IngredientIndex} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>

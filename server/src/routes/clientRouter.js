@@ -6,7 +6,6 @@ const router = new express.Router();
 const clientRoutes = ["/", 
   "/user-sessions/new", 
   "/users/new", 
-  "/ingredients"
 ];
 router.get(clientRoutes, (req, res) => {
   res.sendFile(getClientIndexPath());
