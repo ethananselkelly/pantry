@@ -15,6 +15,34 @@ class User extends uniqueFunc(Model) {
     return "users";
   }
 
+  static get relationMappings() {
+    const Pantry = require('./Pantry.js')
+    const Ingredient = require('./Ingredient')
+
+    return {
+      pantries: {
+        relation: Model.HasManyRelation,
+        modelClass: Pantry,
+        join: {
+          from: 'users.id',
+          to: 'pantries.userId'
+        }
+      },
+      ingredients: {
+        relation: Model.ManyToManyRelation,
+        modelClass: Ingredient,
+        join: {
+          from: 'users.id',
+          through: {
+            from: 'pantries.userId',
+            to: 'pantries.ingredientId'
+          },
+          to: 'ingredients.id'
+        }
+      }
+    }
+  }
+
   set password(newPassword) {
     this.cryptedPassword = Bcrypt.hashSync(newPassword, saltRounds);
   }
