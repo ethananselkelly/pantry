@@ -15,7 +15,7 @@ const IngredientsIndex = (props) => {
   return (
     <>
       <div>
-        <h3 className='ingredient-title'>Ingredients in your pantry:</h3>
+        <h3 className='ingredient-title'>Ingredients in your pantry :</h3>
       </div>
       <div>
         {ingredientListItems}

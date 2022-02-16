@@ -22,11 +22,11 @@ const NewIngredientForm = ({ postIngredient }) => {
     <div>
       <form>
         <label>
-          Add an ingredient to your pantry:
-          <input type='text' name='name' onChange={handleInputChange} value={newIngredient.name} />
+          <p className='ingredient-title'>Add an ingredient to your pantry:</p>
+          <input className='form-field' type='text' name='name' onChange={handleInputChange} value={newIngredient.name} />
         </label>
         <div>
-          <input type='submit' value='Submit' />
+          <input className='form-button' type='submit' value='Submit' />
         </div>
       </form>
     </div>
