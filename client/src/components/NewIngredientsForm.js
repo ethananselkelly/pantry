@@ -12,14 +12,6 @@ const NewIngredientForm = ({ postIngredient }) => {
     })
   }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    const validPost = await postIngredient(newIngredient)
-    if (validPost) {
-      clearForm()
-    }
-  }
-
   const clearForm = () => {
     setNewIngredient({
       name: ''
@@ -28,10 +20,9 @@ const NewIngredientForm = ({ postIngredient }) => {
 
   return (
     <div>
-      <h1>Add an ingredient to your pantry:</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         <label>
-          Ingredient:
+          Add an ingredient to your pantry:
           <input type='text' name='name' onChange={handleInputChange} value={newIngredient.name} />
         </label>
         <div>
