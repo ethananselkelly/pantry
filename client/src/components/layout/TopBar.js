@@ -31,6 +31,9 @@ const TopBar = ({ user }) => {
           <li>
             <Link to="/ingredients">Pantry</Link>
           </li>
+          <li>
+            <Link to="/ingredients/search">Find ingredients</Link>
+          </li>
         </ul>
       </div>
       <div className="top-bar-right">
