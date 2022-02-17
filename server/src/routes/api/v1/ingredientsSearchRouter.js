@@ -19,8 +19,4 @@ ingredientsSearchRouter.get('/', async (req, res) => {
   }
 })
 
-ingredientsSearchRouter.post('/', async (req,res) => {
-  
-})
-
 export default ingredientsSearchRouter

@@ -12,6 +12,17 @@ ingredientsRouter.get('/', async (req, res) => {
     return res.status(500).json({ errors: error })
   }
 })
+
+ingredientsRouter.post('/', async (req, res) => {
+  const { id, name, userId } = req.body
+
+  try {
+    const newIngredient = await Ingredient.query().insertAndFetch({ name, id })
+    await newIngredient.$relatedQuery('pantries').insert({ userId: userId, ingredientsId: id })
+  } catch (error) {
+    return res.status(500).json({ errors: error })
+  }
+})
  
 ingredientsRouter.use('/search', ingredientsSearchRouter)
 export default ingredientsRouter
