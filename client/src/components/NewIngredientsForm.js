@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 const NewIngredientForm = ({ searchIngredient }) => {
-  // debugger
   const [newIngredient, setNewIngredient] = useState({
     name: ''
   })
