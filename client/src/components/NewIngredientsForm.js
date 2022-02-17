@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-const NewIngredientForm = ({ postIngredient }) => {
+const NewIngredientForm = ({ searchIngredient }) => {
+  // debugger
   const [newIngredient, setNewIngredient] = useState({
     name: ''
   })
@@ -12,6 +13,14 @@ const NewIngredientForm = ({ postIngredient }) => {
     })
   }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const validPost = await searchIngredient(newIngredient);
+    if (validPost) {
+      clearForm();
+    }
+  };
+
   const clearForm = () => {
     setNewIngredient({
       name: ''
@@ -20,7 +29,7 @@ const NewIngredientForm = ({ postIngredient }) => {
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           <p className='ingredient-title'>Add an ingredient to your pantry:</p>
           <input className='form-field' type='text' name='name' onChange={handleInputChange} value={newIngredient.name} />

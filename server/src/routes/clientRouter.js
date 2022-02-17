@@ -7,7 +7,8 @@ const clientRoutes = [
   "/", 
   "/user-sessions/new", 
   "/users/new",
-  "/ingredients"
+  "/ingredients",
+  "/ingredients/search"
 ];
 router.get(clientRoutes, (req, res) => {
   res.sendFile(getClientIndexPath());

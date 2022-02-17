@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import NewIngredientForm from './NewIngredientsForm.js'
 
 const IngredientsIndex = (props) => {
   const [ingredients, setIngredients] = useState([])
@@ -22,7 +21,6 @@ const IngredientsIndex = (props) => {
       </div>
       <div>
       </div>
-      <NewIngredientForm />
     </>
   )
 }

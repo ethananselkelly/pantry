@@ -9,6 +9,7 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 
 import IngredientsIndex from "./IngredientsIndex";
+import IngredientSearchPage from "./IngredientSearchPage";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -33,6 +34,7 @@ const App = (props) => {
           <h2>Welcome to your pantry</h2>
         </Route>
         <Route exact path="/ingredients" component={IngredientsIndex} />
+        <Route exact path="/ingredients/search" component={IngredientSearchPage} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
