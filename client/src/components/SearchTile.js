@@ -1,11 +1,15 @@
 import React from 'react'
 
-const SearchTile = (props) => {
+const SearchTile = ({ ingredient, saveIngredient }) => {
+  const handleClick = async (event) => {
+    event.preventDefault()
+    await saveIngredient(ingredient)
+  }
 
   return (
     <div>
-      <h3>{props.name}</h3>
-      <button>➕ Add to pantry</button>
+      <h3>{ingredient.name}</h3>
+      <button onClick={handleClick}>➕ Add to pantry</button>
     </div>
   )
 }
