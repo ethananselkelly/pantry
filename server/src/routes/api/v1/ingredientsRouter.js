@@ -15,8 +15,9 @@ ingredientsRouter.get('/', async (req, res) => {
 
 ingredientsRouter.post('/', async (req, res) => {
   const { id, name } = req.body
+  const spoonacularApi = id
   try {
-    const newIngredient = await Ingredient.query().insert({ name, id })
+    const newIngredient = await Ingredient.query().insert({ name, spoonacularApi })
     await newIngredient.$relatedQuery('users').relate( req.user.id )
     return res.status(201).json({ ingredient: newIngredient })
   } catch (error) {
