@@ -14,12 +14,10 @@ ingredientsRouter.get('/', async (req, res) => {
 })
 
 ingredientsRouter.post('/', async (req, res) => {
-  const { id, name, userId } = req.body
-  console.log(req.body)
-
+  const { id, name } = req.body
   try {
-    let newIngredient = await Ingredient.query().insert({ name, id })
-    await newIngredient.$relatedQuery('users').relate({ userId })
+    const newIngredient = await Ingredient.query().insert({ name, id })
+    await newIngredient.$relatedQuery('users').relate( req.user.id )
     return res.status(201).json({ ingredient: newIngredient })
   } catch (error) {
     return res.status(500).json({ errors: error })
