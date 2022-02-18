@@ -18,7 +18,7 @@ class Pantry extends Model {
 
   static relationMappings() {
     const Ingredient = require('./Ingredient.js')
-    const User = require('./User')
+    const User = require('./User.js')
 
     return {
       ingredient: {

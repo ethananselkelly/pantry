@@ -36,6 +36,7 @@ const IngredientSearchPage = (props) => {
         const error = new Error(errorMessage)
         throw error
       }
+      return true
     } catch (error) {
       console.log(error)
       console.error(`Error in fetch: ${error.message}`)
