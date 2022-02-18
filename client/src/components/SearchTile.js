@@ -1,9 +1,8 @@
 import React from 'react'
 
-const SearchTile = ({ user, ingredient, saveIngredient }) => {
+const SearchTile = ({ ingredient, saveIngredient }) => {
   const handleClick = async (event) => {
     event.preventDefault()
-    ingredient.userId = user.id
     await saveIngredient(ingredient)
   }
 

@@ -49,7 +49,6 @@ const IngredientSearchPage = (props) => {
       return <SearchTile 
         key={ingredientObject.id} 
         ingredient={ingredientObject} 
-        user={user}
         saveIngredient={saveIngredient}
       />
     })
