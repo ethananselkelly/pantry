@@ -58,10 +58,10 @@ const IngredientSearchPage = (props) => {
 
   return (
     <>
-      <div>
+      <div className='container'>
         <NewIngredientForm searchIngredient={searchIngredient}/>
       </div>
-      <div>
+      <div className='container'>
         {searchResultList}
       </div>
     </>

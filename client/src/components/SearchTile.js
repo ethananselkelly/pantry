@@ -7,9 +7,9 @@ const SearchTile = ({ ingredient, saveIngredient }) => {
   }
 
   return (
-    <div>
-      <h3>{ingredient.name}</h3>
-      <button onClick={handleClick}>➕ Add to pantry</button>
+    <div className='ingredient-tile'>
+      <p>{ingredient.name}</p>
+      <button className='ingredient-button' onClick={handleClick}>➕ Add to pantry</button>
     </div>
   )
 }
