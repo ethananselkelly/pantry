@@ -4,6 +4,7 @@
 @import "./ingredient.scss";
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway&display=swap');
 @import "./topBar.scss";
+@import "./homePage.scss";
 // place global css here
 
 body {
@@ -12,14 +13,15 @@ body {
   color: #112a46;
 }
 
-p {
-  text-transform: capitalize;
-  font-size: 125%;
-  margin-bottom: 0;
-}
+// p {
+//   text-transform: capitalize;
+//   font-size: 125%;
+//   margin-bottom: 0;
+// }
 
-.home-page {
-  background-image: url(https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+.header-text {
+  text-align: center;
+  font-weight: bold;
 }
 
 .container {
