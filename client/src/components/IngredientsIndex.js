@@ -4,8 +4,6 @@ import PantryTile from './PantryTile'
 const IngredientsIndex = (props) => {
   const [ingredients, setIngredients] = useState([])
 
-  const user = props.user
-
   const getIngredients = async () => {
     try {
       const response = await fetch(`/api/v1/ingredients`)
@@ -25,6 +23,15 @@ const IngredientsIndex = (props) => {
     getIngredients()
   }, [])
 
+  const updateIngredients = async (deletedIngredient) => {
+    ingredients.forEach((ingredient) => {
+      if (ingredient.id === deletedIngredient.id) {
+        ingredients.splice(ingredient.id, 1)
+        getIngredients()
+      }
+    })
+  }
+
   const removeIngredient = async (ingredient) => {
     try {
       const response = await fetch(`/api/v1/ingredients`, 
@@ -40,11 +47,13 @@ const IngredientsIndex = (props) => {
         const error = new Error(errorMessage)
         throw error
       }
+      const body = await response.json()
+      const deletedIngredient = body.deletedIngredient
+      updateIngredients(deletedIngredient)
       return true
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`)
     }
-    getIngredients()
   }
 
   let ingredientListItems
