@@ -44,6 +44,7 @@ const IngredientsIndex = (props) => {
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`)
     }
+    getIngredients()
   }
 
   let ingredientListItems
@@ -53,6 +54,7 @@ const IngredientsIndex = (props) => {
         key={ingredientObject.id}
         ingredient={ingredientObject}
         removeIngredient={removeIngredient}
+        getIngredients={getIngredients}
       />
     })
   }
