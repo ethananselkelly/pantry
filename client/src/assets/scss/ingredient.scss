@@ -25,13 +25,18 @@
   border-style: solid;
   border-color: #FFF3D3;
   border-width: 3px;
-  opacity: 75%;
+  opacity: 90%;
   filter: drop-shadow(5px 5px 4px #00000099);
+}
+
+.ingredient-tile:hover {
+  opacity: 60%;
+  transition: .15s;
 }
 
 .ingredient-button:hover {
   transition: transform 0.15s;
-  transform: scale(1.1);
+  transform: scale(1.07);
 }
 .ingredient-button:focus {
   color:yellowgreen

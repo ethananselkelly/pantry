@@ -27,11 +27,15 @@ const App = (props) => {
   }, [])
 
   return (
+          <div className='home-page'>
     <Router>
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <h2>Welcome to your pantry</h2>
+          <body>
+
+            <h2>Welcome to your pantry</h2>
+          </body>
         </Route>
         
         <Route exact path="/ingredients" component={IngredientsIndex} />
@@ -43,6 +47,7 @@ const App = (props) => {
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
     </Router>
+          </div>
   );
 };
 

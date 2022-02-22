@@ -24,14 +24,14 @@ const TopBar = ({ user }) => {
     <div className="top-bar border">
       <div className="top-bar-left">
         <ul className="menu">
-          <li className="menu-text top-bar-menu"> My Pantry </li>
-          <li className='red-tab'>
+          <li className="menu-text top-bar-menu"> Your Pantry </li>
+          <li className='top-bar-tab'>
             <Link to="/">Home</Link>
           </li>
-          <li className='green-tab'>
+          <li className='top-bar-tab'>
             <Link to="/ingredients">Pantry</Link>
           </li>
-          <li className='blue-tab'>
+          <li className='top-bar-tab'>
             <Link to="/ingredients/search">Find ingredients</Link>
           </li>
         </ul>
