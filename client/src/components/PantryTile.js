@@ -1,10 +1,9 @@
 import React from 'react'
 
-const PantryTile = ({ ingredient, removeIngredient, getIngredients }) => {
+const PantryTile = ({ ingredient, removeIngredient }) => {
   const handleClick = async (event) => {
     event.preventDefault()
     await removeIngredient(ingredient)
-    // await getIngredients()
   }
 
   return (
