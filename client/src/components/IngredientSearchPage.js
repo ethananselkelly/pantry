@@ -53,7 +53,9 @@ const IngredientSearchPage = (props) => {
       />
     })
   } else {
-    searchResultList = `Search for ingredients to add to your pantry`
+    searchResultList = <p className='ingredient-tile'>
+      Search for ingredients to add to your pantry
+    </p>
   }
 
   return (

@@ -5,12 +5,17 @@ body .home-page {
 }
 
 .splash-text {
+  // margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   padding: 1%;
-  background-color: #6869ad;
+  background-color: white;
+  border-style: solid;
+  border-color: #6869ad;
+  border-width: 5px;
   width: 50%;
   filter: drop-shadow(10px 5px 5px);
   justify-content: center;
+  opacity: 85%;
 }
