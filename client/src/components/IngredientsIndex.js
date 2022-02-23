@@ -66,15 +66,19 @@ const IngredientsIndex = (props) => {
         getIngredients={getIngredients}
       />
     })
+  } else {
+    ingredientListItems = <p className='ingredient-tile'>Add ingredients on the "Find ingredients" page</p>
   }
 
   return (
     <>
-      <div>
+      <div className='container'>
         <h3 className='ingredient-title'>Ingredients in your pantry :</h3>
       </div>
-      <div>
-        {ingredientListItems}
+      <div className='container'>
+        <div className='column-grid'>
+          {ingredientListItems}
+        </div>
       </div>
       <div>
       </div>

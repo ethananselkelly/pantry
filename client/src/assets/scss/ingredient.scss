@@ -8,23 +8,29 @@
   margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: .5%;
-  padding-right: .5%;
+  padding:1%;
+  border-style: solid;
+  border-color: #6869ad;
+  border-width: 5px;;
+  border-width: 2px;
   width: 66%;
+  filter: drop-shadow(5px 5px 4px #00000099);
 }
 
 .ingredient-tile {
   text-transform: capitalize;
-  font-size: 125%;
+  font-size: 100%;
   text-align: center;
-  width: fit-content;
+  width: 80%;
+  height:100px;
   margin: 5%;
   padding-left: 2%;
   padding-right: 2%;
   background-color: white;
   border-style: solid;
-  border-color: azure;
-  border-width: 3px;
+  border-color: #6869ad;
+  border-width: 5px;;
+  border-width: 2px;
   opacity: 85%;
   filter: drop-shadow(5px 5px 4px #00000099);
 }
@@ -35,12 +41,16 @@
   transform: scale(1.05);
 }
 
+.ingredient-button {
+  font-size: 75%;
+}
+
 .ingredient-button:hover {
   transition: transform 0.15s;
-  transform: scale(1.07);
+  transform: scale(1.05);
 }
 .ingredient-button:focus {
-  color:yellowgreen
+  color: #688cad;
 }
 
 .form-field {

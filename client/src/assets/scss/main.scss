@@ -30,9 +30,21 @@ body {
 .container {
   margin: 1%;
   padding: 1%;
-  background-color: #6869ad;
+  background-color: white;
+  border-style: solid;
+  border-color: #6869ad;
+  border-width: 2px;
   width: 30%;
 }
+
+.column-grid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  padding-top: 5%;
+  row-gap: 25px;
+}
+
 *,
 *::before,
 *::after {

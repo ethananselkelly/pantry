@@ -34,7 +34,7 @@ const NewIngredientForm = ({ searchIngredient }) => {
           <input className='form-field' type='text' name='name' onChange={handleInputChange} value={newIngredient.name} />
         </label>
         <div className='form-button'>
-          <input className='form-button' type='submit' value='Submit' />
+          <input className='button' type='submit' value='Submit' />
         </div>
       </form>
     </div>
