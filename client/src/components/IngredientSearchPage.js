@@ -52,15 +52,17 @@ const IngredientSearchPage = (props) => {
       />
     })
   } else {
-    searchResultList = `Search for ingredients to add to your pantry`
+    searchResultList = <p className='ingredient-tile'>
+      Search for ingredients to add to your pantry
+    </p>
   }
 
   return (
     <>
-      <div>
+      <div className='container'>
         <NewIngredientForm searchIngredient={searchIngredient}/>
       </div>
-      <div>
+      <div className='container'>
         {searchResultList}
       </div>
     </>

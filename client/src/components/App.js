@@ -10,6 +10,7 @@ import TopBar from "./layout/TopBar";
 
 import IngredientsIndex from "./IngredientsIndex";
 import IngredientSearchPage from "./IngredientSearchPage";
+import HomePage from "./HomePage";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -30,10 +31,8 @@ const App = (props) => {
     <Router>
       <TopBar user={currentUser} />
       <Switch>
-        <Route exact path="/">
-          <h2>Welcome to your pantry</h2>
-        </Route>
-        
+        <Route exact path="/" component={HomePage} />
+                 
         <Route exact path="/ingredients" component={IngredientsIndex} />
         <Route exact path="/ingredients/search">
           <IngredientSearchPage user={currentUser} />

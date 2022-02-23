@@ -30,10 +30,10 @@ const NewIngredientForm = ({ searchIngredient }) => {
     <div>
       <form onSubmit={handleSubmit}>
         <label>
-          <p className='ingredient-title'>Add an ingredient to your pantry:</p>
+          <h3 className='ingredient-title'>Add an ingredient to your pantry:</h3>
           <input className='form-field' type='text' name='name' onChange={handleInputChange} value={newIngredient.name} />
         </label>
-        <div>
+        <div className='form-button'>
           <input className='form-button' type='submit' value='Submit' />
         </div>
       </form>

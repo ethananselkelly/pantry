@@ -1,0 +1,21 @@
+body .home-page {
+  height: 100vh;
+  background-image: url(https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+  background-size: cover;
+}
+
+.splash-text {
+  // margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 1%;
+  background-color: white;
+  border-style: solid;
+  border-color: #6869ad;
+  border-width: 5px;
+  width: 50%;
+  filter: drop-shadow(10px 5px 5px);
+  justify-content: center;
+  opacity: 85%;
+}

@@ -3,11 +3,35 @@
 @include foundation-everything;
 @import "./ingredient.scss";
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway&display=swap');
+@import "./topBar.scss";
+@import "./homePage.scss";
 // place global css here
 
 body {
   background-color: azure;
   color: #112a46;
+}
+
+.header-text {
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  width:fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  // border-style: solid;
+  border-color: #6869ad;
+  border-width: 5px;
+  opacity: 80%;
+  filter: drop-shadow(10px 5px 5px);
+}
+
+.container {
+  margin: 1%;
+  padding: 1%;
+  background-color: #6869ad;
+  width: 30%;
 }
 *,
 *::before,
