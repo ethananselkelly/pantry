@@ -8,7 +8,7 @@ const PantryTile = ({ ingredient, removeIngredient }) => {
 
   return (
     <div className='ingredient-tile'>
-      <h3>{ingredient.name}</h3>
+      <p>{ingredient.name}</p>
       <button className='ingredient-button' onClick={handleClick}>➖ Remove</button>
     </div>
   )

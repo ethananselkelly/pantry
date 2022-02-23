@@ -1,3 +1,16 @@
 .top-bar-tab {
+  color: #6869ad;
   font-weight: bold;
+}
+.top-bar-tab:hover {
+  color: #474778;
+}
+
+.button {
+  background-color: #6869ad;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #474778;
 }
