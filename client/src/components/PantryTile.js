@@ -7,9 +7,9 @@ const PantryTile = ({ ingredient, removeIngredient }) => {
   }
 
   return (
-    <div>
+    <div className='ingredient-tile'>
       <h3>{ingredient.name}</h3>
-      <button onClick={handleClick}>➖ Remove</button>
+      <button className='ingredient-button' onClick={handleClick}>➖ Remove</button>
     </div>
   )
 }
