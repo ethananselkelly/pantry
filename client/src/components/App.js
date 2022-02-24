@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { hot } from "react-hot-loader/root";
 import "../assets/scss/main.scss";
 
+import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
 import getCurrentUser from "../services/getCurrentUser";
 import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
@@ -33,7 +34,7 @@ const App = (props) => {
       <Switch>
         <Route exact path="/" component={HomePage} />
                  
-        <Route exact path="/ingredients" component={IngredientsIndex} />
+        <AuthenticatedRoute exact path="/ingredients" component={IngredientsIndex} user={currentUser} />
         <Route exact path="/ingredients/search">
           <IngredientSearchPage user={currentUser} />
         </Route>
