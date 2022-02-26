@@ -6,9 +6,12 @@ const SearchTile = ({ ingredient, saveIngredient }) => {
     await saveIngredient(ingredient)
   }
 
+  const image = `https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`
+
   return (
     <div className='ingredient-tile'>
       <p>{ingredient.name}</p>
+      <img src={image} alt={ingredient.name} />
       <button className='ingredient-button' onClick={handleClick}>➕ Add to pantry</button>
     </div>
   )
