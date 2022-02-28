@@ -5,8 +5,8 @@ const SearchTile = ({ ingredient, saveIngredient }) => {
   
   const handleClick = async (event) => {
     event.preventDefault()
-    setButtonText('✅ Added')
     await saveIngredient(ingredient)
+    setButtonText('✅ Added')
   }
   
   const image = `https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`
