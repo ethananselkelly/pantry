@@ -7,7 +7,7 @@ const spoonacularApiKey = process.env.SPOONACULAR_API
 class SpoonacularClient {
  static async getIngredient(ingredient) {
    try {
-     const url = `https://api.spoonacular.com/food/ingredients/search?apiKey=${spoonacularApiKey}&query=${ingredient}&number=2`
+     const url = `https://api.spoonacular.com/food/ingredients/search?apiKey=${spoonacularApiKey}&query=${ingredient}&number=3`
      const apiResponse = await got(url)
      const responseBody = apiResponse.body
      return responseBody
