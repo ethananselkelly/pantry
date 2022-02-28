@@ -42,11 +42,12 @@
 
 .ingredient-button {
   font-size: 75%;
+  padding: 2%;
 }
 
 .ingredient-button:hover {
-  transition: transform 0.15s;
-  transform: scale(1.05);
+  background-color: azure;
+  cursor: pointer;
 }
 .ingredient-button:focus {
   color: #688cad;

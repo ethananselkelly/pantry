@@ -63,7 +63,9 @@ const IngredientSearchPage = (props) => {
         <NewIngredientForm searchIngredient={searchIngredient}/>
       </div>
       <div className='container'>
-        {searchResultList}
+        <div className='column-grid'>
+          {searchResultList}
+        </div>
       </div>
     </>
   )
