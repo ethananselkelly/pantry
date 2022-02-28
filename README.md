@@ -11,6 +11,7 @@ The database is designed to work with Postgres/SQL.
 Run the following commands from the root file:
 
 >$ yarn install
+>
 >$ createdb pantry_development
 
 Run the following command in the server folder to create the database:
