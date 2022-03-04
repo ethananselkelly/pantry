@@ -34,7 +34,7 @@ const SearchTile = ({ ingredient, saveIngredient }) => {
   
   const handleClick = async (event) => {
     event.preventDefault()
-    ingredient.category = category
+    ingredient.category = category.category
     await saveIngredient(ingredient)
     setButtonText('✅ Added')
   }
