@@ -43,9 +43,10 @@ class Ingredient extends unique(Model) {
     static get jsonSchema() {
         return {
             type: 'object',
-            required: ['name'],
+            required: ['name', 'category'],
             properties: {
-                name: { type: 'string' }
+                name: { type: 'string' },
+                category: { type: 'string' }
             }
         }
     }
