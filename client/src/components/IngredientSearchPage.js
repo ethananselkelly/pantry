@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 import NewIngredientForm from './NewIngredientsForm.js'
 import SearchTile from './SearchTile.js'
-import ErrorList from './layout/ErrorList.js'
-import translateServerErrors from '../services/translateServerErrors.js'
 
 const IngredientSearchPage = (props) => {
   const [searchResults, setSearchResults] = useState([])
-  const [errors, setErrors] = useState([])
 
   const searchIngredient = async (ingredient) => {
     try {
@@ -33,17 +30,10 @@ const IngredientSearchPage = (props) => {
         body: JSON.stringify(ingredient)
       })
       if (!response.ok) {
-        if (response.status === 422) {
-          const body = await response.json()
-          const newErrors = translateServerErrors(body.errors)
-          return setErrors(newErrors)
-        } else {
-          const errorMessage = `${response.status} (${response.statusText})`
-          const error = new Error(errorMessage)
-          throw error
-        }
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw error
       }
-      setErrors([])
       return true
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`)
@@ -71,7 +61,6 @@ const IngredientSearchPage = (props) => {
         <NewIngredientForm searchIngredient={searchIngredient}/>
       </div>
       <div className='container'>
-        <ErrorList errors={errors} />
         <div className='column-grid'>
           {searchResultList}
         </div>

@@ -1,6 +1,8 @@
 import express from 'express'
-import { Ingredient, User } from '../../../models/index.js'
+import objection from 'objection'
+import { Ingredient, User, Category } from '../../../models/index.js'
 import ingredientsSearchRouter from './ingredientsSearchRouter.js'
+const { ValidationError } = objection
  
 const ingredientsRouter = new express.Router()
  
@@ -15,19 +17,25 @@ ingredientsRouter.get('/', async (req, res) => {
 })
 
 ingredientsRouter.post('/', async (req, res) => {
-  const { id, name } = req.body
+  const { id, name, category } = req.body
   const spoonacularApi = id
+  const selectedCategory = await Category.query().findOne({ name: category })
+  const categoryId = selectedCategory.id
   let newIngredient
   try {
     const existingIngredient = await Ingredient.query().findOne({ spoonacularApi: spoonacularApi })
     if (existingIngredient) {
       newIngredient = await existingIngredient.$relatedQuery('users').relate( req.user.id )
     } else {
-      newIngredient = await Ingredient.query().insert({ name, spoonacularApi })
+      newIngredient = await Ingredient.query().insert({ name, spoonacularApi, categoryId })
       await newIngredient.$relatedQuery('users').relate( req.user.id )
     }
     return res.status(201).json({ ingredient: newIngredient })
   } catch (error) {
+    console.log(error)
+    if (error instanceof ValidationError) {
+      return res.status(422).json({ errors: error.data })
+    }
     return res.status(500).json({ errors: error })
   }
 })

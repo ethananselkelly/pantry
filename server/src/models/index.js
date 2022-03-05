@@ -2,5 +2,6 @@
 const User = require("./User.js")
 const Ingredient = require('./Ingredient.js')
 const Pantry = require('./Pantry.js')
+const Category = require('./Category')
 
-module.exports = { User, Ingredient, Pantry };
+module.exports = { User, Ingredient, Pantry, Category };
