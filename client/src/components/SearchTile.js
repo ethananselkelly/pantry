@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import FormError from './layout/FormError'
 
 const SearchTile = ({ ingredient, saveIngredient }) => {
   const [buttonText, setButtonText] = useState('➕ Add to pantry')
   const [category, setCategory] = useState('')
+  const [errors, setErrors] = useState({});
   const categories = [
     '',
     'fruits & vegetables', 
@@ -16,6 +18,24 @@ const SearchTile = ({ ingredient, saveIngredient }) => {
     'snacks',
     'other'
   ]
+
+  const validateInput = (payload) => {
+    setErrors({})
+    const { category } = payload
+    let newErrors = {}
+    if (!category) {
+      newErrors = {
+        ...newErrors,
+        category: 'category is required'
+      }
+    }
+
+    setErrors(newErrors)
+    if (Object.keys(newErrors).length === 0) {
+      return true
+    }
+    return false
+  }
 
   const handleInputChange = (event) => {
     setCategory({
@@ -35,8 +55,10 @@ const SearchTile = ({ ingredient, saveIngredient }) => {
   const handleClick = async (event) => {
     event.preventDefault()
     ingredient.category = category.category
-    await saveIngredient(ingredient)
-    setButtonText('✅ Added')
+    if (validateInput(ingredient)) {
+      await saveIngredient(ingredient)
+      setButtonText('✅ Added')
+    }
   }
   
   const image = `https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`
@@ -50,6 +72,7 @@ const SearchTile = ({ ingredient, saveIngredient }) => {
         Category:
         <select name='category' onChange={handleInputChange}>{categoryOptions}</select>
       </label>
+      <FormError error={errors.category} />
       <div>
         {button}  
       </div>
