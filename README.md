@@ -17,10 +17,11 @@ Run the following commands from the root file:
 >
 >$ createdb pantry_development
 
-Run the following command in the server folder to create the database:
+Run the following command in the server folder to create the database and seed the categories table:
 
 >$ yarn migrate:latest
-
+>
+>$ yarn run db:seed
 
 # Usage
 
