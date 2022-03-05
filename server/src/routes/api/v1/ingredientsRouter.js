@@ -32,10 +32,6 @@ ingredientsRouter.post('/', async (req, res) => {
     }
     return res.status(201).json({ ingredient: newIngredient })
   } catch (error) {
-    console.log(error)
-    if (error instanceof ValidationError) {
-      return res.status(422).json({ errors: error.data })
-    }
     return res.status(500).json({ errors: error })
   }
 })
