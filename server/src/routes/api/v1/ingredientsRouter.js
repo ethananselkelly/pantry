@@ -1,8 +1,6 @@
 import express from 'express'
-import objection from 'objection'
 import { Ingredient, User, Category } from '../../../models/index.js'
 import ingredientsSearchRouter from './ingredientsSearchRouter.js'
-const { ValidationError } = objection
  
 const ingredientsRouter = new express.Router()
  
